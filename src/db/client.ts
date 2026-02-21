@@ -1,10 +1,14 @@
 import { drizzle } from 'drizzle-orm/better-sqlite3';
 import Database from 'better-sqlite3';
 import { sql } from 'drizzle-orm';
+import { mkdirSync } from 'fs';
+import { dirname } from 'path';
 import { articles } from './schema.js';
 
-const sqlite = new Database(process.env.DATABASE_URL?.replace('file:', '') ?? 'dev.db');
+const dbPath = process.env.DATABASE_URL?.replace('file:', '') ?? 'dev.db';
+mkdirSync(dirname(dbPath), { recursive: true });
 
+const sqlite = new Database(dbPath);
 export const db = drizzle(sqlite, { schema: { articles } });
 
 db.run(sql`
@@ -17,9 +21,4 @@ db.run(sql`
     posted INTEGER DEFAULT 0,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
   )
-`);
-
-db.run(sql`
-  DELETE FROM articles 
-  WHERE created_at < datetime('now', '-7 days')
 `);
