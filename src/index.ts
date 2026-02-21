@@ -7,6 +7,8 @@ import { summarizeArticle } from './pipeline/summarize.js';
 import { formatPost } from './pipeline/format.js';
 import { sendToTelegram } from './pipeline/post.js';
 import { logger } from './utils/logger.js';
+import { db } from './db/client.js';
+import { sql } from 'drizzle-orm';
 
 const KEYWORDS = [
   'bitcoin',
@@ -108,5 +110,13 @@ cron.schedule('0 12 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE 
 cron.schedule('0 15 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE });
 cron.schedule('0 18 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE });
 cron.schedule('0 21 * * *', () => void runEveningDigest(), { timezone: TIMEZONE });
+cron.schedule(
+  '0 0 * * 0',
+  () => {
+    db.run(sql`DELETE FROM articles WHERE created_at < datetime('now', '-7 days')`);
+    logger.info('🗑️ Old articles cleaned up');
+  },
+  { timezone: TIMEZONE },
+);
 
 logger.info('🐸 El Sapo Cripto arrancó! Esperando el horario...');

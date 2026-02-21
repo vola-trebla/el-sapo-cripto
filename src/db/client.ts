@@ -18,3 +18,8 @@ db.run(sql`
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
   )
 `);
+
+db.run(sql`
+  DELETE FROM articles 
+  WHERE created_at < datetime('now', '-7 days')
+`);

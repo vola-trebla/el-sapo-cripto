@@ -1,6 +1,6 @@
 # 🐸 El Sapo Cripto Bot
 
-> *Sin drama, sin hype. Solo señal.*
+> _Sin drama, sin hype. Solo señal._
 
 Autonomous AI-powered Telegram bot that monitors global crypto news, summarizes articles in Spanish using Google Gemini, and posts clean digests to [@ElSapoCripto](https://t.me/ElSapoCripto) — built for the Latin American crypto community.
 
@@ -22,21 +22,22 @@ Autonomous AI-powered Telegram bot that monitors global crypto news, summarizes 
 
 ## Schedule (Montevideo time, UTC-3)
 
-| Time | Content |
-|------|---------|
+| Time  | Content                                              |
+| ----- | ---------------------------------------------------- |
 | 10:00 | 🌅 Morning prices (BTC/ETH/SOL/PEPE/DOGE) + top news |
-| 12:00 | 📰 News digest (up to 5 articles) |
-| 15:00 | 📰 News digest (up to 5 articles) |
-| 18:00 | 📰 News digest (up to 5 articles) |
-| 21:00 | 🌙 Evening sign-off + fun news pick |
+| 12:00 | 📰 News digest (up to 5 articles)                    |
+| 15:00 | 📰 News digest (up to 5 articles)                    |
+| 18:00 | 📰 News digest (up to 5 articles)                    |
+| 21:00 | 🌙 Evening sign-off + fun news pick                  |
 
 ---
 
 ## Post format
+
 ```
 🔥 Kraken xStocks rompe barreras con $25B en volumen
 
-Las acciones tokenizadas de Kraken han superado los $25 mil millones 
+Las acciones tokenizadas de Kraken han superado los $25 mil millones
 en volumen en menos de ocho meses...
 
 _Cuando los números hablan solos, el Sapo solo aplaude._ 🐸
@@ -51,23 +52,24 @@ _Cuando los números hablan solos, el Sapo solo aplaude._ 🐸
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Runtime | Node.js 22 LTS |
-| Language | TypeScript 5.x (strict) |
-| LLM | Google Gemini 2.5 Flash (Vercel AI SDK) |
-| Prices | CoinMarketCap API |
-| RSS | rss-parser (CoinDesk, CoinTelegraph, Decrypt, The Block) |
-| Database | SQLite + Drizzle ORM |
-| Telegram | Grammy |
-| Validation | Zod |
-| Scheduling | node-cron |
-| Logging | Pino |
-| Deploy | Railway (auto-deploy on push) |
+| Layer      | Technology                                               |
+| ---------- | -------------------------------------------------------- |
+| Runtime    | Node.js 22 LTS                                           |
+| Language   | TypeScript 5.x (strict)                                  |
+| LLM        | Google Gemini 2.5 Flash (Vercel AI SDK)                  |
+| Prices     | CoinMarketCap API                                        |
+| RSS        | rss-parser (CoinDesk, CoinTelegraph, Decrypt, The Block) |
+| Database   | SQLite + Drizzle ORM                                     |
+| Telegram   | Grammy                                                   |
+| Validation | Zod                                                      |
+| Scheduling | node-cron                                                |
+| Logging    | Pino                                                     |
+| Deploy     | Railway (auto-deploy on push)                            |
 
 ---
 
 ## Project Structure
+
 ```
 src/
   index.ts              # Entry point + cron schedule
@@ -92,6 +94,7 @@ src/
 ---
 
 ## Environment Variables
+
 ```env
 GOOGLE_GENERATIVE_AI_API_KEY=
 TELEGRAM_BOT_TOKEN=
