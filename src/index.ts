@@ -106,9 +106,9 @@ async function runEveningDigest(): Promise<void> {
 const TIMEZONE = 'America/Montevideo';
 
 cron.schedule('0 10 * * *', () => void runMorningDigest(), { timezone: TIMEZONE });
-cron.schedule('0 12 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE });
-cron.schedule('0 15 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE });
-cron.schedule('0 18 * * *', () => void runNewsPipeline(5), { timezone: TIMEZONE });
+cron.schedule('0 12 * * *', () => void runNewsPipeline(1), { timezone: TIMEZONE });
+cron.schedule('0 15 * * *', () => void runNewsPipeline(1), { timezone: TIMEZONE });
+cron.schedule('0 18 * * *', () => void runNewsPipeline(1), { timezone: TIMEZONE });
 cron.schedule('0 21 * * *', () => void runEveningDigest(), { timezone: TIMEZONE });
 cron.schedule(
   '0 0 * * 0',
