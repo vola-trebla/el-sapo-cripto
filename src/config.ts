@@ -6,6 +6,7 @@ const envSchema = z.object({
   TELEGRAM_BOT_TOKEN: z.string().min(1),
   TELEGRAM_CHANNEL_ID: z.string().min(1),
   DATABASE_URL: z.string().default('file:./dev.db'),
+  COINMARKETCAP_API_KEY: z.string().min(1),
 });
 
 const parsed = envSchema.safeParse(process.env);
