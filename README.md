@@ -1,6 +1,6 @@
 # 🐸 El Sapo Cripto Bot
 
-> *Sin drama, sin hype. Solo señal.*
+> _Sin drama, sin hype. Solo señal._
 
 Autonomous Telegram bot that monitors crypto news sources, filters noise, summarizes articles using AI, and posts clean digests to [@ElSapoCripto](https://t.me/ElSapoCripto) — in Spanish, for the Latin American crypto community.
 
@@ -18,17 +18,17 @@ Autonomous Telegram bot that monitors crypto news sources, filters noise, summar
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Runtime | Node.js 22 LTS |
-| Language | TypeScript 5.x (strict) |
-| LLM | Google Gemini 2.0 Flash (Vercel AI SDK) |
-| Database | SQLite + Drizzle ORM |
-| Telegram | Grammy |
-| Validation | Zod |
-| Scheduling | node-cron |
-| Logging | Pino |
-| Deploy | Docker + VPS |
+| Layer      | Technology                              |
+| ---------- | --------------------------------------- |
+| Runtime    | Node.js 22 LTS                          |
+| Language   | TypeScript 5.x (strict)                 |
+| LLM        | Google Gemini 2.0 Flash (Vercel AI SDK) |
+| Database   | SQLite + Drizzle ORM                    |
+| Telegram   | Grammy                                  |
+| Validation | Zod                                     |
+| Scheduling | node-cron                               |
+| Logging    | Pino                                    |
+| Deploy     | Docker + VPS                            |
 
 ---
 
