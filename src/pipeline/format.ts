@@ -14,6 +14,8 @@ export function formatPost(article: FeedArticle, summary: Summary): string {
 
 ${summary.summary}
 
+_${summary.thought}_ 🐸
+
 📊 ${sentimentMap[summary.sentiment]}
 🔗 [Fuente: ${article.source}](${article.url})
 

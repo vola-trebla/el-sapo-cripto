@@ -10,6 +10,7 @@ import { truncateToWord } from '../utils/truncate.js';
 const SummarySchema = z.object({
   title: z.string(),
   summary: z.string(),
+  thought: z.string().describe('Comentario breve y con personalidad del Sapo, máx 100 caracteres'),
   tags: z.array(z.string()).min(3).max(5),
   sentiment: z.enum(['bullish', 'bearish', 'neutral']),
   emoji: z.string(),
@@ -52,6 +53,7 @@ Responde con este formato JSON:
 - tags: 3-5 hashtags, SIEMPRE con # al inicio, sin espacios (ej: #Bitcoin #DeFi)
 - sentiment: "bullish", "bearish" o "neutral"
 - emoji: UN solo emoji que refleje el mood real de la noticia
+- thought: UNA frase corta (máx 100 caracteres) con la reacción del Sapo. Tono: irónico ligero, inteligente y con personalidad. Sin exageraciones, sin burlas infantiles, sin hype. Debe sonar como una observación aguda, no como un meme.
 
 Reglas:
 - Solo español latinoamericano
